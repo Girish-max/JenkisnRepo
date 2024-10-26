@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #01A982;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .highlighted {
+            background-color: #0056b3 !important;
+        }
+
+        table {
+            margin: 20px auto;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 800px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        .image-container {
+            margin: 20px 0;
+        }
+        
+        .image-container {
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 300px; /* Set max width to a smaller size */
+    max-height: 250px; /* Set max height to maintain aspect ratio */
+    width: auto; /* Adjust width automatically */
+    height: auto; /* Adjust height automatically */
+    border-radius: 10px;
+}
+
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (min-width: 600px) {
+            button {
+                width: auto;
+            }
+        }
+
+        .dialout-button {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #01A982;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .dialout-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img id="dynamic-image" src="https://girishimagefolders.s3.amazonaws.com/Cloudimagefolder/Kids+Day+office+image+for+web.PNG">
+    </div>
+    
+    <h2>Choose the Age Group to view the event information</h2>
+    <h4>Any issue accessing information.<br> Please reach out to 🚀 Help Desk / Girish Kumar</h4>
+
+    <button class="dialout-button" onclick="location.href='tel:+918970680227'"> ☎️ Call Help Desk</button>
+    
+    
+    
+     <div id="table-container"></div>
+
+    <button class="event-button" onclick="showMessage('Age Group 5-10', 
+        ['Origami 1', '2F: Dhyan Chand 3A.01', '10 to 15 minutes',
+         'Origami 2', '2F: Kapil Dev 3A.08', '10 to 15 minutes','Key Chain/Bracelet Making', '2F: Abhinav Bindra 3A.11', '10 to 15 minutes',
+         'Key Chain/Bracelet Making', '2F: Bachendri Pal 3A.12', '10 to 15 minutes'],
+         'https://cdn.pixabay.com/photo/2018/08/04/18/08/origami-3584204_1280.jpg', this)">Age Group 5-10</button>
+    
+    <button class="event-button" onclick="showMessage('Age Group 10+', 
+        ['Lego Robotics', 'GF: Franklin D Roosevelt 1A.13', '60 minutes',
+         'Lego Robotics', '1F: Johannes Gutenberg 2A.01', '60 minutes',
+         'Lab Tour', 'Basement', '10:30am to 11:00 am \n 11:00 am to 12:00 pm \n 12:00 pm to 12:30 pm \n 12:30 pm to 1:00 pm \n 1:00 pm to 1:30 pm \n 1:30 pm to 2:00 pm \n 2:00 pm to 2:30 pm \n 2:30 pm to 3:00 pm \n 3:00 pm to 3:30 pm'],
+         'https://dam2.kadanza.io/uploads/hpe/previews/HPE20160526118_574e25a8bf59d_574e25b69d35c.jpg', this)">Age Group 10+</button>
+    
+    <button class="event-button" onclick="showMessage('All Age Groups',
+        ['🎈 🎯 Balloon Dart Game \n 🏰 Mario Bouncing Castle', 'Behind the Recreation Center', '10:30 am to 4:00 pm',
+         '🛒 Flea Market', 'Opposite the fountain', '10:00 am to 5:00 pm',
+         '⚱️ Pottery', 'In Front of Recreation Center', '10:00 am to 4:00 pm',
+         '🥤 Salad Bar', '2F: Break Out Area', '15 minutes', '💅🏼 Nail Art', '1F: Break Out Area', '--',
+         'Twinning Fashion Show', 'At the Entrance of the Building', '3:30 pm'],
+         'https://ab487509f8decc2c0cd2-9ff2a6143bff296f88e68c3257991f4b.ssl.cf6.rackcdn.com/1039296326add67c590_place.jpg', this)">All Age Groups</button>
+
+    <button class="event-button" onclick="showMessage('Lunch Time', 
+        ['Lunch Slots', 'Cafeteria', '12:00 pm to 12:45 pm \n 12:45 pm to 1:30 pm \n 1:30 pm to 2:15 pm \n 2:15 pm to 3:00 pm'],
+         'https://content3.jdmagicbox.com/v2/comp/bangalore/p2/080pxx80.xx80.180529132546.f2p2/catalogue/hpe-ec-campus-electronic-city-bangalore-ns5p3vcouf.jpg', this)">Lunch Time</button>
+
+    <button class="event-button" onclick="showMapInfo()">🗺️ View Map</button>
+
+  
+    <script>
+        function showMessage(headerText, messages, imageUrl, clickedButton) {
+            const tableContainer = document.getElementById('table-container');
+            const imageElement = document.getElementById('dynamic-image');
+
+            // Clear previous content
+            tableContainer.innerHTML = '';
+            imageElement.src = imageUrl;
+
+            // Create and display the header for the table
+            const headerElement = document.createElement('h3');
+            headerElement.innerText = headerText;
+            tableContainer.appendChild(headerElement);
+
+            if (messages.length > 1) {
+                const table = document.createElement('table');
+                
+                const headerRow = table.insertRow();
+                const activityHeader = document.createElement('th');
+                activityHeader.innerText = 'Activity';
+                headerRow.appendChild(activityHeader);
+                const locationHeader = document.createElement('th');
+                locationHeader.innerText = 'Location';
+                headerRow.appendChild(locationHeader);
+                const timeHeader = document.createElement('th');
+                timeHeader.innerText = 'Time';
+                headerRow.appendChild(timeHeader);
+                
+                // Fill the table with messages
+                for (let i = 0; i < messages.length; i += 3) {
+                    const row = table.insertRow();
+                    const activityCell = row.insertCell();
+                    activityCell.innerText = messages[i];
+                    const locationCell = row.insertCell();
+                    locationCell.innerText = messages[i + 1];
+                    const timeCell = row.insertCell();
+                    timeCell.innerText = messages[i + 2];
+                }
+                
+                tableContainer.appendChild(table);
+            }
+
+            // Remove highlighting from all buttons and highlight the clicked one
+            const buttons = document.querySelectorAll('.event-button');
+            buttons.forEach(button => button.classList.remove('highlighted'));
+            clickedButton.classList.add('highlighted');
+        }
+
+        function showMapInfo() {
+            const imageElement = document.getElementById('dynamic-image');
+
+            // Set the specific map image URL (replace with your actual map image URL)
+            imageElement.src = 'https://bfloormap.s3.amazonaws.com/Maplocation.PNG'; // Use your actual map image URL
+
+            // Clear previous table content
+            const tableContainer = document.getElementById('table-container');
+            tableContainer.innerHTML = ''; // Ensure no table is shown
+        }
+    </script>
+</body>
+</html>
